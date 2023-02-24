@@ -72,12 +72,48 @@ b2 = copy(b0)
 for k in 1:(size(A2, 1)-1)
     m = (k+1):size(A2, 1)
     n = (k+1):size(A2, 1)
-    A2[m, n] .-= A2[m, k] ./ A2[k, k] .* A1[k, n]
-    b2[m] .-= A2[m, k] ./ A2[k, k] * b2[k]
+    A2[m, n] .-= A2[m, k] / A2[k, k] * A2[k, n]'
+    b2[m] .-= A2[m, k] / A2[k, k] * b2[k]
 end
 
-x2 = zeros(size(A1, 2), 1)
+x2 = zeros(size(A2, 2), 1)
 
-for m in size(A1,1):(-1):1
-    local temp = 0
+for m in size(A2, 1):(-1):1
+    n = (m+1):size(A2, 1)
+    x2[m] = (b2[m] - sum(A2[m, n] .* x2[n])) / A2[m, m]
 end
+
+# PLU FELBONTÁS
+
+A00 = [1 2 5; 0.2 1.6 7.4; 0.5 4 8.5]
+
+if size(A00)[1] != size(A00)[2]
+    error("A mátrix nem négyzetes!")
+end
+
+A = copy(A00)
+
+N = size(A, 1)
+P = collect(1.0I(N))
+U = zeros(size(A))
+L = collect(1.0I(N))
+for k in 1:N
+    while A[k, k] == 0
+        A[[end, k], :] .= A[[k, end], :]
+        P[[end, k], :] .= P[[k, end], :]
+    end
+
+    for n in k:N
+        U[k, n] = A[k, n]
+    end
+
+    for m in (k+1):N
+        L[m, k] = A[m, k] / A[k, k]
+        A[m, k] = L[m, k]
+        for n in (k+1):N
+            A[m, n] = A[m, n] - A[m, k] * A[k, n]
+        end
+    end
+end
+
+display(L*U - P*A00)
