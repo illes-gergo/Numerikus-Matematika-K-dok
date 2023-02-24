@@ -83,7 +83,7 @@ for m in size(A2, 1):(-1):1
     x2[m] = (b2[m] - sum(A2[m, n] .* x2[n])) / A2[m, m]
 end
 
-# PLU FELBONTÁS
+# PLU Felbontás
 
 A00 = [1 2 5; 0.2 1.6 7.4; 0.5 4 8.5]
 
@@ -116,4 +116,33 @@ for k in 1:N
     end
 end
 
-display(L*U - P*A00)
+println("L*U - P*A00")
+display(L * U - P * A00)
+
+# PLU Felbontás mátrixműveletekkel
+
+if size(A00)[1] != size(A00)[2]
+    error("A mátrix nem négyzetes!")
+end
+
+A = copy(A00)
+
+N = size(A, 1)
+
+P = collect(1.0I(N))
+U = zeros(size(A))
+L = collect(1.0I(N))
+
+for k in 1:N
+    while A[k, k] == 0
+        A[[end, k], :] .= A[[k, end], :]
+        P[[end, k], :] .= P[[k, end], :]
+    end
+    U[k, k:N] .= A[k, k:N]
+    L[(k+1):N, k] .= A[(k+1):N, k] / A[k, k]
+    A[(k+1):N, k] .= L[(k+1):N, k]
+    A[(k+1):N, (k+1):N] .= A[(k+1):N, (k+1):N] .- A[(k+1):N, k] * A[k, (k+1):N]'
+end
+
+println("Mátrixokkal L*U - P*A00")
+display(L * U - P * A00)
