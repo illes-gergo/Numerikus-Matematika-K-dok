@@ -135,7 +135,7 @@ L = collect(1.0I(N))
 
 for k in 1:N
     while A[k, k] == 0
-        A[[end, k], :] .= A[[k, end], :]
+        A[[k:end], :] .= A[[end,k:end-1], :]
         P[[end, k], :] .= P[[k, end], :]
     end
     U[k, k:N] .= A[k, k:N]
