@@ -45,7 +45,8 @@ Ebben az írásmódban $y$ a függő változó, $\vec{x}$ $p$ hosszúságú vekt
 \frametitle{\subsecname}
 A becslésünk jóságára vezessünk be egy hibaváltozót, ez legyen $\epsilon$. Lineáris függést, valamint $\epsilon$ hibát feltételezve az egyes $y_i$-k a következőképp írhatók fel:
 \begin{align*}
-y_i&=\beta_0+\sum_{j=1}^{p}\beta_jx_{ij}+\epsilon_i
+y_i=\beta_0+\sum_{j=1}^{p}\beta_jx_{ij}+\epsilon_i&=\vec{x_i}\vec{\beta}^T+\epsilon_i, & i=1,2,\dots,n
 \end{align*}
+Az egyenletből látszik, hogy itt feltételezünk egy 0-ik $x_{i0}$ elemet, ami minden $\vec{x}$ esetén 1-nek adódik.
 \end{frame}
 \end{document}
