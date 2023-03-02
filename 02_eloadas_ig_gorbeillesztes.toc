@@ -1,0 +1,2 @@
+\select@language {magyar} \beamer@sectionintoc {1}{Lineáris regresszió}{3}{0}{1}
+\select@language {magyar} \beamer@subsectionintoc {1}{1}{Általános ismertetés}{3}{0}{1}

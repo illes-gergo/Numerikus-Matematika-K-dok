@@ -1,0 +1,51 @@
+\documentclass{beamer}
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyphenat}
+\usepackage{amsmath}
+
+\title{Görbeillesztés}
+\subtitle{Lineáris regresszió, legkisebb négyzetek módszere}
+\author{Illés Gergő és Sarkadi Balázs}
+\institute{PTE TTK Fizikai Intézet}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}
+\frametitle{Tartalom}
+\tableofcontents
+\end{frame}
+\section{Lineáris regresszió}
+\subsection{Általános ismertetés}
+\begin{frame}
+\frametitle{\subsecname}
+\begin{itemize}
+\item A lineáris regresszió a leggyakrabban használt görbeillesztési módszer.
+\item Lineáris regresszió használatakor lineáris kapcsolatot feltételezünk a független\hyp{} és függő változó között.
+\item Nemlineáris kapcsolatokra is alkalmazható a függő\hyp{} és független változók közti kapcsolat linearizálásával.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{\subsecname}
+Tételezzük fel, hogy rendelkezünk egy adathalmazzal amely $n$ darab statisztikai egységet tartalmaz. Ezt mátrix formájában a következőképp írhatjuk le.
+\begin{equation*}
+\left[
+\begin{matrix}
+\left\lbrace y_1,[x_{11},\dots,x_{1p}]\right\rbrace\\
+\vdots\\
+\left\lbrace y_n,[x_{n1},\dots,x_{np}]\right\rbrace\\
+\end{matrix}
+\right]
+\end{equation*}
+Ebben az írásmódban $y$ a függő változó, $\vec{x}$ $p$ hosszúságú vektor pedig az úgynevezett regresszor ami a független változókat tartalmazza.
+\end{frame}
+\begin{frame}
+\frametitle{\subsecname}
+A becslésünk jóságára vezessünk be egy hibaváltozót, ez legyen $\epsilon$. Lineáris függést, valamint $\epsilon$ hibát feltételezve az egyes $y_i$-k a következőképp írhatók fel:
+\begin{align*}
+y_i&=\beta_0+\sum_{j=1}^{p}\beta_jx_{ij}+\epsilon_i
+\end{align*}
+\end{frame}
+\end{document}

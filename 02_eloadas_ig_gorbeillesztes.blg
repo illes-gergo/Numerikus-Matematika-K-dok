@@ -1,0 +1,5 @@
+[0] Config.pm:306> INFO - This is Biber 2.18
+[0] Config.pm:309> INFO - Logfile is '02_eloadas_ig_gorbeillesztes.blg'
+[71] biber:340> INFO - === cs márc  2, 2023, 08:21:17
+[271] Utils.pm:399> ERROR - Cannot find '02_eloadas_ig_gorbeillesztes.bcf'!
+[271] Biber.pm:135> INFO - ERRORS: 1
