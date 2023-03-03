@@ -1,0 +1,51 @@
+\select@language {magyar} \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {1}{1}}
+\select@language {magyar} \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {2}{2}}
+\select@language {magyar} \headcommand {\beamer@sectionpages {1}{2}}
+\select@language {magyar} \headcommand {\beamer@subsectionpages {1}{2}}
+\select@language {magyar} \headcommand {\sectionentry {1}{Lineáris regresszió}{3}{Lineáris regresszió}{0}}
+\select@language {magyar} \headcommand {\beamer@subsectionpages {3}{2}}
+\select@language {magyar} \headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Bevezetés}}
+\select@language {magyar} \headcommand {\slideentry {1}{1}{1}{3/3}{Bevezetés}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {3}{3}}
+\select@language {magyar} \headcommand {\beamer@subsectionpages {3}{3}}
+\select@language {magyar} \headcommand {\beamer@subsectionentry {0}{1}{2}{4}{Általános eset}}
+\select@language {magyar} \headcommand {\slideentry {1}{2}{1}{4/4}{Általános eset}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {4}{4}}
+\select@language {magyar} \headcommand {\slideentry {1}{2}{2}{5/5}{Általános eset}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {5}{5}}
+\select@language {magyar} \headcommand {\slideentry {1}{2}{3}{6/6}{Általános eset}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {6}{6}}
+\select@language {magyar} \headcommand {\beamer@subsectionpages {4}{6}}
+\select@language {magyar} \headcommand {\beamer@subsectionentry {0}{1}{3}{7}{Egy darab független változó esete}}
+\select@language {magyar} \headcommand {\slideentry {1}{3}{1}{7/7}{Egy darab független változó esete}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {7}{7}}
+\select@language {magyar} \headcommand {\slideentry {1}{3}{2}{8/8}{Egy darab független változó esete}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {8}{8}}
+\select@language {magyar} \headcommand {\slideentry {1}{3}{3}{9/9}{Egy darab független változó esete}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {9}{9}}
+\select@language {magyar} \headcommand {\slideentry {1}{3}{4}{10/10}{Egy darab független változó esete}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {10}{10}}
+\select@language {magyar} \headcommand {\slideentry {1}{3}{5}{11/11}{Egy darab független változó esete}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {11}{11}}
+\select@language {magyar} \headcommand {\beamer@sectionpages {3}{11}}
+\select@language {magyar} \headcommand {\beamer@subsectionpages {7}{11}}
+\select@language {magyar} \headcommand {\sectionentry {2}{Legkisebb négyzetek módszere}{12}{Legkisebb négyzetek módszere}{0}}
+\select@language {magyar} \headcommand {\beamer@subsectionpages {12}{11}}
+\select@language {magyar} \headcommand {\beamer@subsectionentry {0}{2}{1}{12}{Bevezetés}}
+\select@language {magyar} \headcommand {\slideentry {2}{1}{1}{12/12}{Bevezetés}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {12}{12}}
+\select@language {magyar} \headcommand {\beamer@subsectionpages {12}{12}}
+\select@language {magyar} \headcommand {\beamer@subsectionentry {0}{2}{2}{13}{Általános megoldás}}
+\select@language {magyar} \headcommand {\slideentry {2}{2}{1}{13/13}{Általános megoldás}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {13}{13}}
+\select@language {magyar} \headcommand {\slideentry {2}{2}{2}{14/14}{Általános megoldás}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {14}{14}}
+\select@language {magyar} \headcommand {\slideentry {2}{2}{3}{15/15}{Általános megoldás}{0}}
+\select@language {magyar} \headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@partpages {1}{15}}
+\headcommand {\beamer@subsectionpages {13}{15}}
+\headcommand {\beamer@sectionpages {12}{15}}
+\headcommand {\beamer@documentpages {15}}
+\headcommand {\gdef \inserttotalframenumber {15}}

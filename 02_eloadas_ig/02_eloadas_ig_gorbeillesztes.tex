@@ -1,0 +1,154 @@
+\documentclass [aspectratio=169]{beamer}
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{hyphenat}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\usefonttheme[onlymath]{serif}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\newcommand{\titten}{\secname{} -- \subsecname}
+
+\title{Görbeillesztés}
+\subtitle{Lineáris regresszió, legkisebb négyzetek módszere}
+\author{Illés Gergő és Sarkadi Balázs}
+\institute{PTE TTK Fizikai Intézet}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}
+\frametitle{Tartalom}
+\tableofcontents
+\end{frame}
+\section{Lineáris regresszió}
+\subsection{Bevezetés}
+\begin{frame}
+\frametitle{\titten}
+\begin{itemize}
+\item A lineáris regresszió a leggyakrabban használt görbeillesztési módszer.
+\item Lineáris regresszió használatakor lineáris kapcsolatot feltételezünk a független\hyp{} és függő változó között.
+\item Nemlineáris kapcsolatokra is alkalmazható a függő\hyp{} és független változók közti kapcsolat linearizálásával.
+\end{itemize}
+\end{frame}
+\subsection{Általános eset}
+\begin{frame}
+\frametitle{\titten}
+Tételezzük fel, hogy rendelkezünk egy adathalmazzal amely $n$ darab statisztikai egységet tartalmaz. Ezt mátrix formájában a következőképp írhatjuk le.
+\begin{equation*}
+\left[
+\begin{matrix}
+\left\lbrace y_1,[x_{11},\dots,x_{1p}]\right\rbrace\\
+\vdots\\
+\left\lbrace y_n,[x_{n1},\dots,x_{np}]\right\rbrace\\
+\end{matrix}
+\right]
+\end{equation*}
+Ebben az írásmódban $y$ a függő változó, $\vec{x}$ $p$ hosszúságú vektor pedig az úgynevezett regresszor ami a független változókat tartalmazza.
+\end{frame}
+\begin{frame}
+\frametitle{\titten}
+A becslésünk jóságára vezessünk be egy hibaváltozót, ez legyen $\epsilon$. Lineáris függést, valamint $\epsilon$ hibát feltételezve az egyes $y_i$-k a következőképp írhatók fel:
+\begin{align*}
+y_i=\beta_0+\sum_{j=1}^{p}\beta_jx_{ij}+\epsilon_i&=\vec{x_i}\vec{\beta}^T+\epsilon_i, & i=1,2,\dots,n
+\end{align*}
+Az egyenletből látszik, hogy itt feltételezünk egy 0-ik $x_{i0}$ elemet, ami minden $\vec{x}$ esetén 1-nek adódik.
+\end{frame}
+\begin{frame}
+\frametitle{\titten}
+A lineáris egyenletrendszerek témakörben szerzett tudásunk alapján beláthatjuk, hogy amennyiben $\vec{x_i}$-kből mátrixot képzünk, valamint $\epsilon_i$-kből vektort képzünk, egy lineáris egyenletrendszert írhatunk fel mátrixműveletek formájában a következő módon:
+\begin{equation*}
+\vec{y}=\mathbf{X}\vec{\beta}+\vec{\epsilon}.
+\end{equation*}
+Célunk innentől az $\epsilon$ tag ,,minimalizálása''.
+\end{frame}
+\subsection{Egy darab független változó esete}
+\begin{frame}
+\frametitle{\titten}
+\begin{itemize}
+\item Az eddig tárgyalt általános esetben $\vec{x_i}$ egy $1\times (p+1)$ méretű vektor volt, azonban 1 darab független változóval dolgozunk az esetek többségében.
+\item A továbbiakban 1 darab független változóval dolgozunk.
+\item Ebből adódik, hogy $\mathbf{X}$ egy $n\times 2$ méretű mátrix lesz aminek a második oszlopban lévő elemeit $x_i$-vel jelöljük.
+\item A $\vec{\beta}$ együttható vektor pedig $1\times 2$-es vektor lesz, ennek elemit $\beta_i$-vel jelöljük.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{\titten}
+Definiáljuk $Q(\vec{\beta})$ függvényt az egyes $x_i$-khez tartozó hibák négyzetösszegeként.
+\begin{align*}
+Q(\vec{\beta})&=\sum^n_{i=1}\epsilon_i^2=\sum^n_{i=1}(y_i-\beta_0-\beta_1x_i)^2\\
+&=\sum^n_{i=1}(y_i^2+\beta_0^2+\beta_1^2x_i^2-2y_i\beta_0-2y_i\beta_1x_1+2\beta_0\beta_1x_i)
+\end{align*}
+Célunk azon $\beta_0$ és $\beta_1$ paraméterek megkeresésre amelyre $Q(\vec{\beta})$ függvény minimális értéket vesz fel.
+\end{frame}
+\begin{frame}
+\frametitle{\titten}
+Minimalizáljuk $Q(\vec{\beta})$-t $\beta_0$ szerint:
+\begin{align*}
+\frac{\partial Q(\vec{\beta})}{\partial\beta_0}&=\sum_{i=1}^n(2\beta_0-2y_i+2\beta_1x_i)\\
+&=2n\beta_0-2\sum_{i=1}^n(y_i)+2\beta_1\sum_{i=1}^n(x_i)\\
+&=\beta_0-\overline{y}+\beta_1\overline{x}=0
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{\titten}
+Most tegyük ugyanezt $\beta_1$ szerint:
+\begin{align*}
+\frac{\partial Q(\vec{\beta})}{\partial\beta_1}&=\sum_{i=1}^n(2\beta_1x_i^2-2y_ix_i+2\beta_0x_i)\\
+&=2\beta_1\sum_{i=1}^n(x_i^2)-2\sum_{i=1}^n(x_iy_i)+2\beta_0\sum_{i=1}^n(x_i)\\
+&=\beta_1\overline{x^2}-\overline{xy}+\beta_0\overline{x}=0
+\end{align*}
+\end{frame}
+\begin{frame}
+\frametitle{\titten}
+A minimalizációval kapott lineáris egyenletrendszert megoldva $\beta_0$ és $\beta_1$ a következőknek adódik:
+\begin{align*}
+\beta_0&=\frac{\overline{x}\:\overline{xy}-\overline{x^2}\:\overline{y}}{\overline{x}^2-\overline{x^2}}\\
+\beta_1&=\frac{\overline{x}\:\overline{y}-\overline{xy}}{\overline{x}^2-\overline{x^2}}
+\end{align*}
+$\beta_0$ és $\beta_1$ paraméterek segítségével már meghatározhatjuk az adathalmazra négyzetesen legjobban illeszkedő egyenes paramétereit.
+\end{frame}
+\section{Legkisebb négyzetek módszere}
+\subsection{Bevezetés}
+\begin{frame}
+\frametitle{\titten}
+\begin{itemize}
+\item A legkisebb négyzetek módszerének, lényege az, hogy a modell (magyarázó függvény) paramétereit úgy hangoljuk, hogy a görbe a lehető legjobban illeszkedjen az adathalmazra.
+\item Az előző fejezetben az egyenes paramétereinek kiszámításakor ugyan így a legkisebb négyzetek módszerét alkalmaztuk.
+\item Két legkisebb négyzetes módszert különböztetünk meg:
+\begin{itemize}
+\item Lineáris/közönséges négyzetek: a maradékok a paraméterektől lineárisan függ
+\item Nemlineáris négyzetek: a maradékok nemlineárisan függnek a paraméterektől
+\end{itemize}
+\end{itemize}
+\end{frame}
+\subsection{Általános megoldás}
+\begin{frame}
+\frametitle{\titten}
+Tegyük fel, hogy mérési eredményeként kaptunk egy $x_i$ és $y_i$ értékekből álló adathalmazt utóbbi tartalmaz némi zajt. Feltételezzük továbbá, hogy a valódi $y$ értékek előállnak egy ismert függvény értékeként, ez legyen $f(x;\mathbf{a})$. A mérési eredményeket ekkor a következőképp fejezhetjük ki:
+\begin{equation*}
+y_i=f(x;\mathbf{a})+n_i
+\end{equation*}
+\end{frame}
+\begin{frame}
+\frametitle{\titten}
+Tegyük fel, hogy a hibák függetlenek és normál eloszlásúak ($N(0,\sigma_i)$) ekkor bevezethetünk egy mennyiséget:
+\begin{equation*}
+\chi^2(\mathbf{a})=\sum_{i=1}^N\left[\frac{y_i-f(x_i;\mathbf{a)}}{\sigma_i}\right]^2
+\end{equation*}
+\end{frame}
+\begin{frame}
+\frametitle{\titten}
+$\chi^2(\mathbf{a})$ minimalizálásával megkaphatjuk a legjobban illeszkedő görbét. Ezt az $a_i$ paraméterek szerinti deriválással tehetjük meg a következőképp:
+\begin{align*}
+\left.\frac{\partial\chi^2(\mathbf{a})}{\partial a_i}\right\vert_{\mathbf{a}=\mathbf{a}_{LS}}&=0 & i=1,2,\dots,N
+\end{align*}
+$\chi^2(\mathbf{a})$-be behelyettesítve a megoldandó egyenlet a következő:
+\begin{equation*}
+\sum	_{i=1}^N\left.\left((f(x_i;\mathbf{a})-y_i)\frac{\partial f(x_i;\mathbf{a})}{\partial a_i}\right)\right\vert_{\mathbf{a}=\mathbf{a}_{LS}}=0
+\end{equation*}
+\end{frame}
+\end{document}

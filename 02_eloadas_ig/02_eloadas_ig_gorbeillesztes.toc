@@ -1,0 +1,7 @@
+\select@language {magyar} \beamer@sectionintoc {1}{Lineáris regresszió}{3}{0}{1}
+\select@language {magyar} \beamer@subsectionintoc {1}{1}{Bevezetés}{3}{0}{1}
+\select@language {magyar} \beamer@subsectionintoc {1}{2}{Általános eset}{4}{0}{1}
+\select@language {magyar} \beamer@subsectionintoc {1}{3}{Egy darab független változó esete}{7}{0}{1}
+\select@language {magyar} \beamer@sectionintoc {2}{Legkisebb négyzetek módszere}{12}{0}{2}
+\select@language {magyar} \beamer@subsectionintoc {2}{1}{Bevezetés}{12}{0}{2}
+\select@language {magyar} \beamer@subsectionintoc {2}{2}{Általános megoldás}{13}{0}{2}
